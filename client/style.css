@@ -3,8 +3,6 @@ content {
 }
 
 div {
-    border: solid;
-    border-width: 1px;
     height: 750px
 }
 
@@ -16,6 +14,7 @@ header {
 
 #leftPanel {
     width: 300px;
+    background-color: #eeeeee;
 }
 
 #mainContent {
@@ -30,10 +29,16 @@ header {
 }
 
 #buttonList button {
-    margin-left: -20px;
-    width: 100%;
-    margin-top: 10px;
+    background-color: white;
+    margin-left: -35px;
+    width: 250px;
+    margin-top: 5px;
     height: 50px;
+    border: none;
+}
+
+#buttonList button:hover {
+    background-color: #dddddd;
 }
 
 #goalTrackerLeftPanel {
@@ -65,9 +70,27 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: aquamarine;
-    border: solid;
-    border-width: 1px;
+    background-color: #eeeeee;
+    height: 50px;
+}
+
+#newGoalhi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 50px;
+}
+
+#newGoalhi p {
+    margin-left: 10px;
+}
+
+#newGoalhi:hover {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cccccc;
     height: 50px;
 }
 
@@ -78,7 +101,7 @@ header {
 }
 
 #goal:hover {
-    background-color: aqua;
+    background-color: #cccccc;
 }
 
 #goal p {
@@ -86,6 +109,7 @@ header {
 }
 
 #goalArea {
+    background-color: #d2d2d2;
     width: 100%;
 }
 
@@ -122,6 +146,11 @@ textarea {
     margin-left: 10px;
 }
 
+#goalsList {
+    background-color: #dddddd;
+    padding: 5px;
+}
+
 #goal-header {
     display: flex;
     justify-content: space-between;
@@ -143,5 +172,5 @@ textarea {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }

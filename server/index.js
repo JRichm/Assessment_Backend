@@ -16,7 +16,6 @@ app.get("/api/compliment", getCompliment);
 app.get("/api/fortune/", getFortune);
 
 app.post('/api/goals', (req, res) => {
-    console.log(`new Post`)
     let {goalTitle} = req.body;
 
     let index;
@@ -59,13 +58,11 @@ app.get('/api/goals', (req, res) => {
 });
 
 app.delete('/api/goals', (req,res) => {
-    console.log(`\ndelete method called`);
     let goalTitle = req.query.goalTitle.split('')
     let index;
 
     goalTitle.splice(goalTitle.length - 1, 1);
     goalTitle = goalTitle.join('');
-    console.log(goalTitle);
 
     for(let i = 0; i < goalDB.length; i++) {
         let currentTitle = goalDB[i].goalTitle;

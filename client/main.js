@@ -50,8 +50,6 @@ newGoalForm.addEventListener('submit', (e) => {
         return;
     }
 
-    console.log(`\n( main.js ) body:`)
-    console.log(body)
     axios.post('http://localhost:4000/api/goals', body).then(res => {
 
         while (goalList.firstChild) {
@@ -64,7 +62,7 @@ newGoalForm.addEventListener('submit', (e) => {
         newGoalButtonText.textContent = ' + New Goal';
         newGoalButton.appendChild(newGoalButtonText);
 
-        newGoalButton.id = 'goal';
+        newGoalButton.id = 'newGoalhi';
 
         newGoalButton.addEventListener('click', newGoalButtonCallback)
 
@@ -89,9 +87,6 @@ newGoalForm.addEventListener('submit', (e) => {
             goalButton.appendChild(goalDeleteButton);
             goalList.appendChild(goalButton);
         }
-
-        console.log(res.data)
-
     })
     .catch((err) => console.log(err));
 });
@@ -110,13 +105,8 @@ function buttonClickCallback(e) {
 }
 
 function deleteButtonCallback(e) {
-    console.log(`\ndelete button parent content`);
-    console.log(this.parentElement);
     axios.delete('http://localhost:4000/api/goals?goalTitle=' + this.parentElement.textContent)
     .then((result) => {
-        console.log(`\nresult`);
-        console.log(result);
-
         while (goalList.firstChild) {
             goalList.removeChild(goalList.firstChild);
         }
@@ -152,10 +142,7 @@ function deleteButtonCallback(e) {
             goalButton.appendChild(goalDeleteButton);
             goalList.appendChild(goalButton);
         }
-        
-        console.log(`\nhide viewGoal`);
 
-        console.log(viewGoalTitle, this.parentElement.textContent)
         if (viewGoalTitle.textContent + 'X' === this.parentElement.textContent) {
             document.getElementById('viewGoal').classList.add('hidden');
             document.getElementById('newGoal').classList.remove('hidden');
