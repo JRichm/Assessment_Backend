@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Assessment</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="container">
+    <header>
+      <button id="complimentButton">Get a compliment</button>
+      <button id="fortuneButton">Get Fortune</button>
+    </header>
+    <content>
+      <div id="leftPanel">
+        <ul id="buttonList">
+          <li><button>Goal Tracker</button></li>
+          <li><button>Motivation</button></li>
+        </ul>
+      </div>
+      <div id="mainContent">
+        <div id="goalTracker">
+          <div id="goalTrackerLeftPanel">
+            <div id="goalsList">
+              <div id="goal">
+                <p> + New Goal</p>
+              </div>
+              <div id="goal">
+                <p>Goal2 name here</p>
+              </div>
+            </div>
+          </div>
+          <div id="goalArea">
+            <div id="newGoal">
+              <form id="newGoalForm">
+                <h5>New Goal Title:</h5>
+                <input placeholder="Goal Title...">
+                <h5>New Goal:</h5>
+                <textarea placeholder="Goal"></textarea>
+                <button>Add Goal</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </content>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

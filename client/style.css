@@ -1,0 +1,104 @@
+content {
+    display: flex;
+}
+
+div {
+    border: solid;
+    border-width: 1px;
+    height: 750px
+}
+
+header {
+    border: solid;
+    border-width: 1px;
+    height: 150px;
+}
+
+#leftPanel {
+    width: 300px;
+}
+
+#mainContent {
+    width: 100%;
+}
+
+#buttonList {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0px;
+}
+
+#buttonList button {
+    margin-left: -20px;
+    width: 100%;
+    margin-top: 10px;
+    height: 50px;
+}
+
+#goalTrackerLeftPanel {
+    width: 300px;
+}
+
+#miniHead {
+    height: 25px;
+}
+
+#miniHead p {
+    margin: 0px;
+}
+
+#goalTracker {
+    display: flex;
+}
+
+#goal {
+    background-color: aquamarine;
+    border: solid;
+    border-width: 1px;
+    height: 50px;
+}
+
+#goal:hover {
+    background-color: aqua;
+}
+
+#goal p {
+    margin-left: 10px;
+}
+
+#goalArea {
+    width: 100%;
+}
+
+#goalArea p {
+    background-color: antiquewhite;
+    margin: 15px;
+    width: 1000px;
+    height: 300px;
+}
+
+#newGoalForm {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    margin-left: 10px;
+}
+
+#newGoalForm input {
+    width: 300px;
+}
+
+#newGoalForm textarea {
+    height: 300px;
+}
+
+#newGoalForm h5 {
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+#newGoalForm button {
+    margin-top: 10px;
+    width: 100px;
+}
