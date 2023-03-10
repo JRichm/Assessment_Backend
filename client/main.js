@@ -35,8 +35,8 @@ newGoalForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     let body = {
-        goalTitle: document.getElementById('goalTitle').value,
-        goalData: document.getElementById('goalData').value
+        goalTitle: document.getElementById('new-goal-title').value,
+        goalData: document.getElementById('new-goal-Data').value
     }
 
     if (body.goalData === '' && body.goalTitle === '') {
@@ -52,7 +52,7 @@ newGoalForm.addEventListener('submit', (e) => {
 
     console.log(`\n( main.js ) body:`)
     console.log(body)
-    axios.post('http://localhost:4000/api/goals/', body).then(res => {
+    axios.post('http://localhost:4000/api/goals', body).then(res => {
 
         while (goalList.firstChild) {
             goalList.removeChild(goalList.firstChild);
@@ -92,7 +92,8 @@ newGoalForm.addEventListener('submit', (e) => {
 
         console.log(res.data)
 
-    });
+    })
+    .catch((err) => console.log(err));
 });
 
 

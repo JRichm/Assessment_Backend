@@ -15,8 +15,9 @@ app.get("/api/compliment", getCompliment);
 
 app.get("/api/fortune/", getFortune);
 
-app.post("/api/goals", (req, res) => {
-    let goalTitle = req.body.goalTitle;
+app.post('/api/goals', (req, res) => {
+    console.log(`new Post`)
+    let {goalTitle} = req.body;
 
     let index;
 
@@ -32,9 +33,7 @@ app.post("/api/goals", (req, res) => {
         res.status(200).send(goalDB);
     } else {
         res.status(400).send('goal already tracked')
-    }
-
-    
+    }    
 });
 
 app.get('/api/goals', (req, res) => {
