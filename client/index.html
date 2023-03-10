@@ -23,20 +23,26 @@
               <div id="goal">
                 <p> + New Goal</p>
               </div>
-              <div id="goal">
-                <p>Goal2 name here</p>
-              </div>
             </div>
           </div>
           <div id="goalArea">
             <div id="newGoal">
               <form id="newGoalForm">
                 <h5>New Goal Title:</h5>
-                <input placeholder="Goal Title...">
+                <input id="goalTitle" placeholder="Goal Title...">
                 <h5>New Goal:</h5>
-                <textarea placeholder="Goal"></textarea>
+                <textarea id="goalData" placeholder="Goal"></textarea>
                 <button>Add Goal</button>
               </form>
+            </div>
+            <div id="viewGoal">
+              <div id="goal-header">
+                <p id="viewGoalTitle">Goal Title</p>
+              </div>
+              <textarea disabled id="viewGoalData">Your goal goes here. This is just an example</textarea>
+              <h5>Goal Comments</h5>
+              <p>Add a comment below</p>
+              <textarea id="goalCommentInput" placeholder="comment"></textarea>
             </div>
           </div>
         </div>

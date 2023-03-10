@@ -52,11 +52,29 @@ header {
     display: flex;
 }
 
-#goal {
+#newGoalButton {
     background-color: aquamarine;
     border: solid;
     border-width: 1px;
     height: 50px;
+}
+
+#newGoalButton:hover {}
+
+#goal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aquamarine;
+    border: solid;
+    border-width: 1px;
+    height: 50px;
+}
+
+#goal button {
+    width: 25px;
+    height: 25px;
+    margin: 10px;
 }
 
 #goal:hover {
@@ -71,13 +89,6 @@ header {
     width: 100%;
 }
 
-#goalArea p {
-    background-color: antiquewhite;
-    margin: 15px;
-    width: 1000px;
-    height: 300px;
-}
-
 #newGoalForm {
     display: flex;
     flex-direction: column;
@@ -89,8 +100,9 @@ header {
     width: 300px;
 }
 
-#newGoalForm textarea {
+textarea {
     height: 300px;
+    resize: none;
 }
 
 #newGoalForm h5 {
@@ -101,4 +113,35 @@ header {
 #newGoalForm button {
     margin-top: 10px;
     width: 100px;
+}
+
+#viewGoal {
+    display:flex;
+    flex-direction: column;
+    width: 800px;
+    margin-left: 10px;
+}
+
+#goal-header {
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+#goal-header p {
+    margin: 5px;
+}
+
+#editGoalButton:hover {
+    color: #444444;
+    cursor: pointer;
+}
+
+#goalCommentInput {
+    height: 100px;
+}
+
+.hidden {
+    display: none;
 }
