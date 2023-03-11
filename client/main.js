@@ -39,6 +39,7 @@ newGoalForm.addEventListener('submit', (e) => {
         goalData: document.getElementById('new-goal-Data').value
     }
 
+
     if (body.goalData === '' && body.goalTitle === '') {
         alert('please enter goal\nempty fields: (title, goal)');
         return;
@@ -51,7 +52,6 @@ newGoalForm.addEventListener('submit', (e) => {
     }
 
     axios.post('http://localhost:4000/api/goals', body).then(res => {
-
         while (goalList.firstChild) {
             goalList.removeChild(goalList.firstChild);
         }
@@ -88,7 +88,7 @@ newGoalForm.addEventListener('submit', (e) => {
             goalList.appendChild(goalButton);
         }
     })
-    .catch((err) => console.log(err));
+    .catch((err) => alert(err.response.data));
 });
 
 
