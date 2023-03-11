@@ -1,3 +1,6 @@
+const goalTab = document.getElementById('goalTrackerTab');
+const motivationTab = document.getElementById('motivationTab');
+
 const complimentBtn = document.getElementById("complimentButton")
 const fortuneBtn = document.getElementById("fortuneButton");
 
@@ -16,7 +19,7 @@ const getCompliment = () => {
     axios.get("http://localhost:4000/api/compliment/")
         .then(res => {
             const data = res.data;
-            alert(data);
+            document.getElementById('motivationp').textContent = data;
     });
 };
 
@@ -26,7 +29,7 @@ fortuneBtn.addEventListener('click', () => {
     axios.get("http://localhost:4000/api/fortune/")
         .then(res => {
             const data = res.data;
-            alert(data);
+            document.getElementById('motivationp').textContent = data;
         })
 });
 
@@ -155,3 +158,13 @@ function newGoalButtonCallback() {
     document.getElementById('viewGoal').classList.add('hidden');
     document.getElementById('newGoal').classList.remove('hidden');
 }
+
+goalTab.addEventListener('click', () => {
+    document.getElementById('goals').classList.remove('hidden');
+    document.getElementById('motivation').classList.add('hidden');
+});
+
+motivationTab.addEventListener('click', () => {
+    document.getElementById('goals').classList.add('hidden');
+    document.getElementById('motivation').classList.remove('hidden');
+});

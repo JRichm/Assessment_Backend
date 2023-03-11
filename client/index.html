@@ -5,45 +5,57 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body class="container">
-    <header>
-      <button id="complimentButton">Get a compliment</button>
-      <button id="fortuneButton">Get Fortune</button>
-    </header>
     <content>
       <div id="leftPanel">
         <ul id="buttonList">
-          <li><button>Goal Tracker</button></li>
-          <li><button>Motivation</button></li>
+          <li id="goalTrackerTab"><button>Goal Tracker</button></li>
+          <li id="motivationTab"><button>Motivation</button></li>
         </ul>
       </div>
       <div id="mainContent">
-        <div id="goalTracker">
-          <div id="goalTrackerLeftPanel">
-            <div id="goalsList">
-              <div id="goal">
-                <p> + New Goal</p>
+        <div id="goals" class="hidden">
+          <div id="goalTracker">
+            <div id="goalTrackerLeftPanel">
+              <div id="goalsList">
+                <div id="goal">
+                  <p> + New Goal</p>
+                </div>
+              </div>
+            </div>
+            <div id="goalArea">
+              <div id="newGoal">
+                <form id="newGoalForm">
+                  <h5>New Goal Title:</h5>
+                  <input id="new-goal-title" placeholder="Goal Title...">
+                  <h5>New Goal:</h5>
+                  <textarea id="new-goal-Data" placeholder="Goal"></textarea>
+                  <button>Add Goal</button>
+                </form>
+              </div>
+              <div id="viewGoal" class="hidden">
+                <div id="goal-header">
+                  <p id="viewGoalTitle">Goal Title</p>
+                </div>
+                <textarea disabled id="viewGoalData">Your goal goes here. This is just an example</textarea>
+                <h5>Goal Comments</h5>
+                <p>Add a comment below</p>
+                <textarea id="goalCommentInput" placeholder="comment"></textarea>
               </div>
             </div>
           </div>
-          <div id="goalArea">
-            <div id="newGoal">
-              <form id="newGoalForm">
-                <h5>New Goal Title:</h5>
-                <input id="new-goal-title" placeholder="Goal Title...">
-                <h5>New Goal:</h5>
-                <textarea id="new-goal-Data" placeholder="Goal"></textarea>
-                <button>Add Goal</button>
-              </form>
+        </div>
+        <div id="motivation">
+          <div id="motivationButtons">
+            <div id="complimentButton" class="motivationButton">
+              <p>Get a compliment</p>
             </div>
-            <div id="viewGoal" class="hidden">
-              <div id="goal-header">
-                <p id="viewGoalTitle">Goal Title</p>
-              </div>
-              <textarea disabled id="viewGoalData">Your goal goes here. This is just an example</textarea>
-              <h5>Goal Comments</h5>
-              <p>Add a comment below</p>
-              <textarea id="goalCommentInput" placeholder="comment"></textarea>
+            <div id="fortuneButton" class="motivationButton">
+              <p>Get a fortune</p>
             </div>
+        </div>
+        <div>
+          <div id="motivationText">
+            <p id="motivationp">sample text</p>
           </div>
         </div>
       </div>

@@ -28,6 +28,10 @@ app.post('/api/goals', (req, res) => {
     }
 
     if (index === undefined) {
+        if (goalDB.length >= 14) {
+            res.status(400).send('too many goals, delete one to add new');
+            return;
+        }
         goalDB.push(req.body);
         res.status(200).send(goalDB);
     } else {
