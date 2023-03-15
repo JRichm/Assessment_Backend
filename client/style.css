@@ -147,7 +147,7 @@ textarea {
 
 #goalsList {
     background-color: #dddddd;
-    padding: 5px;
+    width: 250px;
 }
 
 #motivation {
@@ -216,14 +216,18 @@ textarea {
     height: 100px;
 }
 
-#motivation {
-    background-color: #dddddd;
-}
-
 #motivation button {
     margin: 5px;
 }
 
 .hidden {
     display: none !important;
+}
+
+#edit-button {
+
+}
+
+#edit-button:hover {
+    cursor: pointer;
 }

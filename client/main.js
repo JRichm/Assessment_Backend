@@ -8,11 +8,14 @@ const newGoalForm = document.getElementById('newGoalForm');
 
 const viewGoalTitle = document.getElementById('viewGoalTitle');
 const viewGoalData = document.getElementById('viewGoalData');
-const editGoalButton = document.getElementById('editGoalButton');
+const editGoalButton = document.getElementById('edit-button');
 const editGoalTitle = document.getElementById('editGoalTitle');
+const editTitleInput = document.getElementById('edit-title-input');
 const goalList = document.getElementById('goalsList');
 
 let editing = false;
+let previouslySavedGoal;
+let currentGoal;
 
 
 const getCompliment = () => {
@@ -94,14 +97,54 @@ newGoalForm.addEventListener('submit', (e) => {
     .catch((err) => alert(err.response.data));
 });
 
+editGoalButton.addEventListener('click', () => {
+    if (editing) {
+        body = {
+            oldGoal: previouslySavedGoal,
+            editTitleInput: editTitleInput.value,
+            goalBody: viewGoalData.value            
+        }
+
+        axios.put('http://localhost:4000/api/goals', body).then(response => {
+            console.log(response.data);
+            viewGoalTitle.innerHTML = response.data.goalTitle;
+            currentGoal.firstChild.innerHTML = response.data.goalTitle;
+
+            viewGoalTitle.classList.remove('hidden');
+            editTitleInput.classList.add('hidden');
+            editGoalButton.textContent = 'edit';
+            viewGoalData.disabled = true;
+        }).catch(err => console.log(err))
+        
+        
+    } else {
+        editGoalButton.textContent = 'save';
+        viewGoalData.disabled = false;
+        viewGoalTitle.classList.add('hidden');
+        editTitleInput.value = '' + viewGoalTitle.textContent;
+        editTitleInput.classList.remove('hidden');
+        previouslySavedGoal = viewGoalTitle.innerHTML;
+    }
+    editing = !editing;
+});
+
 
 function buttonClickCallback(e) {
     document.getElementById('newGoal').classList.add('hidden');
     document.getElementById('viewGoal').classList.remove('hidden');
+    currentGoal = e.target || e.srcElement;
+    console.log(currentGoal);
+
     axios.get('http://localhost:4000/api/goals?goalTitle=' + this.textContent)
     .then((result) => {
-        viewGoalTitle.textContent = result.data.goalTitle;
-        viewGoalData.textContent = result.data.goalData;
+        console.log(`\nresult`);
+        console.log(result.data[0][result.data[1]]);
+        viewGoalTitle.textContent = result.data[0][result.data[1]].goalTitle;
+        viewGoalData.value = result.data[0][result.data[1]].goalData;
+
+        console.log(result.data[0][result.data[1]].goalTitle);
+        console.log(result.data[0][result.data[1]].goalData);
+        viewGoalData.disabled = true;
     }).catch((err) => {
         console.log(err);
     })
@@ -154,7 +197,7 @@ function deleteButtonCallback(e) {
     .catch((err) => console.log(err));
 }
 
-function newGoalButtonCallback() {
+function newGoalButtonCallback(e) {
     document.getElementById('viewGoal').classList.add('hidden');
     document.getElementById('newGoal').classList.remove('hidden');
 }
