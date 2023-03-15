@@ -128,7 +128,6 @@ editGoalButton.addEventListener('click', () => {
     editing = !editing;
 });
 
-
 function buttonClickCallback(e) {
     document.getElementById('newGoal').classList.add('hidden');
     document.getElementById('viewGoal').classList.remove('hidden');

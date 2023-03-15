@@ -224,10 +224,6 @@ textarea {
     display: none !important;
 }
 
-#edit-button {
-
-}
-
 #edit-button:hover {
     cursor: pointer;
 }
